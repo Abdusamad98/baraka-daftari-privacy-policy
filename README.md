@@ -1,5 +1,3 @@
----
-
 # Baraka daftari — Maxfiylik siyosati / Privacy Policy
 
 - [O'zbekcha](#ozbekcha)
