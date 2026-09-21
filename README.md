@@ -1,9 +1,5 @@
 # Baraka daftari — Maxfiylik siyosati / Privacy Policy
 
-> **Ochiq nusxa / Published copy:** <https://abdusamad98.github.io/baraka-daftari-privacy-policy/>
-> (manba: `docs/pages/`, joylashtirish qadamlari `docs/pages/PUBLISHING.md`). Shu URL Google Play va
-> App Store'ga kiritiladi. Bu fayl — asl nusxa; o'zgartirsangiz `docs/pages/README.md` ni ham yangilang.
-
 - [O'zbekcha](#ozbekcha)
 - [English](#english)
 
