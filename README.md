@@ -7,7 +7,7 @@
 
 ## O'zbekcha
 
-**Kuchga kirish sanasi:** 2026-yil 19-sentabr
+**Kuchga kirish sanasi:** 2026-yil 27-sentabr
 
 **Ma'lumotlar egasi (operator):** Abdusamad Abdukarimov, aloqa: mobilchi4862@gmail.com
 
@@ -17,8 +17,9 @@ nazoratga ega ekaningizni tushuntiradi.
 
 ### 1. Biz qanday ma'lumotlarni olamiz
 
-**1.1. Kirish (hisob) ma'lumotlari.** Ilovadan foydalanish uchun hisob bilan kirish talab qilinadi:
-Google yoki Apple hisobi orqali, yoki email va parol bilan. Google/Apple tanlansa, provayder bizga
+**1.1. Kirish (hisob) ma'lumotlari.** Ilovaga hisob bilan kirishingiz mumkin — Google yoki Apple
+hisobi orqali, yoki email va parol bilan — yoki hisobsiz, mehmon rejimida foydalanishingiz mumkin
+(1.1d). Google/Apple tanlansa, provayder bizga
 quyidagilarni beradi: ismingiz, email manzilingiz, profil rasmi havolasi (Google) va Firebase tomonidan
 berilgan noyob foydalanuvchi identifikatori (uid). Apple bilan kirishda Apple email'ingizni yashirish
 imkonini beradi — bu holda biz faqat Apple bergan yashirin manzilni olamiz; Google/Apple parolingizni
@@ -50,6 +51,15 @@ matnining o'zi bizning serverimizdan chiqadi — unga sizning moliyaviy yozuvlar
 Bildirishnomalarni qurilma sozlamalaridan istalgan payt o'chirib qo'yishingiz mumkin; ruxsat
 so'ralganda rad etsangiz, Ilovaning qolgan qismi o'zgarishsiz ishlayveradi.
 
+**1.1d. Mehmon rejimi (hisobsiz).** "Ro'yxatdan o'tmasdan davom etish"ni tanlasangiz, siz kiritgan
+yozuvlar, jamg'armalar, qarzlar, kategoriyalar, sozlamalar va chek rasmlari **faqat telefoningizda**
+(ilovaning shaxsiy xotirasida) saqlanadi va bizning serverimizga yuborilmaydi. Ilova sozlamalari,
+maslahatlar va (xohlasangiz) qo'llab-quvvatlash to'lovi uchun Firebase sizga **anonim identifikator**
+beradi — unda ism, email yoki telefon yo'q, moliyaviy yozuvlaringiz unga bog'lanmaydi. Mehmon
+rejimidagi ma'lumotlar Ilova o'chirilganda yoki telefon almashtirilganda yo'qoladi. Keyin hisob
+yaratsangiz yoki kirsangiz, ular hisobingizga ko'chiriladi; ko'chirish to'liq tekshirilgandan keyin
+telefondagi nusxa o'chiriladi, ehtiyot nusxasi esa 7 kun qurilmada turadi va keyin o'chadi.
+
 **1.2. Siz kiritadigan moliyaviy yozuvlar.** Siz o'zingiz kiritgan ma'lumotlar:
 
 - daromad va xarajat yozuvlari: summa, valyuta (so'm, AQSh dollari, rubl), so'mdagi qiymati va
@@ -78,7 +88,7 @@ Kamera va fotogalereyaga faqat siz rasm tanlaganingizda murojaat qilinadi.
 (internetdagi har qanday so'rov kabi, Markaziy bank serveri IP manzilingizni ko'rishi mumkin).
 
 **1.5. Qurilmada saqlanadigan ma'lumotlar.** Telefoningizda quyidagilar saqlanadi va bizga
-yuborilmaydi: keshlangan valyuta kurslari va ular olingan vaqt, xatolik hisobotlari sozlamasi,
+yuborilmaydi: keshlangan valyuta kurslari va ular olingan vaqt,
 rejalashtirilgan mahalliy eslatmalar (bildirishnomalar serverdan emas, telefonning o'zidan chiqadi),
 hamda Firebase'ning oflayn keshi (internet bo'lmaganda ishlash uchun).
 
@@ -86,8 +96,24 @@ hamda Firebase'ning oflayn keshi (internet bo'lmaganda ishlash uchun).
 Crashlytics quyidagilarni yuborishi mumkin: qurilma modeli, operatsion tizim versiyasi, Ilova versiyasi,
 xatoning texnik tavsifi (stack trace), xato vaqti va Firebase uid (taxallusli identifikator). Hisobotlarga
 summalar, izohlar, kategoriya nomlari, ism yoki email **qo'shilmaydi**. Hisobotlar faqat reliz
-versiyalaridan yuboriladi va siz ularni istalgan vaqtda **Profil → "Xatolik hisobotlarini yuborish"**
-orqali o'chirib qo'yishingiz mumkin.
+versiyalaridan yuboriladi; ular Ilovaning barqaror ishlashi uchun zarur, shuning uchun Ilova ichida
+alohida o'chirish sozlamasi yo'q. Ma'lum bir hisobotni o'chirishni so'rash uchun quyidagi manzilga yozing.
+
+**1.7. Foydalanish statistikasi (Google Analytics for Firebase).** Ilovani yaxshilash — qaysi
+funksiyalar kerakligi va foydalanuvchi qayerda qiynalayotganini tushunish uchun — Ilova Google Analytics
+for Firebase'ga quyidagilarni yuboradi: qaysi ekranlar ochilgani va qaysi tugmalar bosilgani; qaysi
+funksiyadan foydalanilgani (masalan, yozuv, jamg'arma yoki qarz qo'shildi, hisobot ochildi) — faqat
+turi, kategoriyaning standart kaliti (o'zingiz yaratgan kategoriya faqat "custom" deb), valyuta kodi va
+"ha/yo'q" belgilari bilan; kirish usuli va kirishdagi xato turi; tanlangan sozlamalar (til, mavzu,
+asosiy valyuta, oy boshlanish kuni, eslatma va ilova qulfi yoqilgan-yoqilmagani, mehmon yoki hisob
+rejimi); shuningdek Firebase avtomatik yig'adigan ma'lumotlar — Ilova o'rnatilgan nusxaning
+identifikatori (app instance ID), qurilma modeli, OS va Ilova versiyasi, til, taxminiy mamlakat va sessiya
+vaqtlari. Hisobingiz bo'lsa, u Firebase uid (taxallusli identifikator) bilan bog'lanadi; mehmon
+rejimida uid yuborilmaydi. Statistikaga **hech qachon** summalar, izohlar, ism, email, telefon,
+jamg'arma/qarz nomlari, kategoriya nomlari yoki boshqa siz yozgan matn **qo'shilmaydi**. Reklama
+identifikatori (IDFA / Android Advertising ID) yig'ilmaydi, reklama shaxsiylashtirish signallari
+o'chirilgan va ma'lumotlar reklama yoki kuzatuv (tracking) uchun ishlatilmaydi. Statistika faqat reliz
+versiyalaridan yuboriladi; Ilova ichida alohida o'chirish sozlamasi yo'q.
 
 ### 2. Nima uchun ishlatamiz
 
@@ -95,11 +121,12 @@ orqali o'chirib qo'yishingiz mumkin.
 - yozuvlaringizni saqlash, qurilmalar o'rtasida sinxronlash, hisobot, byudjet va jamg'arma
   ko'rsatkichlarini hisoblash;
 - siz yoqqan eslatmalarni ko'rsatish;
-- Ilova barqarorligini yaxshilash (faqat xatolik hisobotlari).
+- Ilova barqarorligini yaxshilash (xatolik hisobotlari, 1.6);
+- Ilova qanday ishlatilishini umumiy tarzda tushunib, uni yaxshilash (foydalanish statistikasi, 1.7).
 
 Biz ma'lumotlaringizni **sotmaymiz**, reklama ko'rsatmaymiz, reklama yoki kuzatuv (tracking)
-xizmatlariga bermaymiz va foydalanish analitikasi (usage analytics) xizmatlaridan foydalanmaymiz —
-Ilova qaysi ekranlarni ochganingiz yoki nimani bosganingizni kuzatmaydi. Ma'lumotlaringiz asosida
+xizmatlariga bermaymiz. Foydalanish statistikasi (1.7) faqat Ilovani yaxshilash uchun ishlatiladi va
+unda moliyaviy yozuvlaringiz yoki siz yozgan matn bo'lmaydi. Ma'lumotlaringiz asosida
 avtomatlashtirilgan qarorlar qabul qilinmaydi.
 
 ### 3. Qayerda saqlanadi va kimlar qayta ishlaydi
@@ -112,7 +139,8 @@ Ma'lumotlar Google LLC tomonidan taqdim etiladigan Firebase xizmatlarida saqlana
 | Cloud Firestore | yozuvlar, jamg'armalar, qarzlar, sozlamalar, kategoriyalar, oylik yig'indilar, profil va qurilma yozuvlari (1.1a–1.1c) |
 | Cloud Storage for Firebase | chek rasmlari va profil rasmi |
 | Firebase Cloud Messaging | push bildirishnomalar (1.1c) |
-| Firebase Crashlytics | xatolik hisobotlari |
+| Firebase Crashlytics | xatolik hisobotlari (1.6) |
+| Google Analytics for Firebase | foydalanish statistikasi (1.7) |
 
 Firestore va Storage ma'lumotlari Firebase loyihasi uchun tanlangan hududda saqlanadi: **Qatar, Doha (Google Cloud `me-central1`)**.
 Google ma'lumotlarni o'z xavfsizlik va maxfiylik shartlariga muvofiq qayta ishlaydi
@@ -127,6 +155,10 @@ Ma'lumotlaringizni boshqa hech kimga bermaymiz, qonun talab qilgan hollar bundan
 - Firestore va Storage xavfsizlik qoidalari har bir hujjat va faylni **faqat uning egasi** (siz kirgan
   hisob) o'qishi va yozishiga ruxsat beradi; boshqa foydalanuvchilar ma'lumotlaringizni ko'ra olmaydi.
 - Chek rasmlari faqat sizning papkangizda, faqat JPEG va 1 MB dan kichik bo'lishi mumkin.
+- Ixtiyoriy ilova qulfi (Profil → Xavfsizlik): PIN-kodning o'zi saqlanmaydi, faqat uning tuzli
+  xeshi — va u ham faqat telefoningizning himoyalangan xotirasida (iOS Keychain / Android Keystore),
+  bizning serverlarimizga yuborilmaydi. Barmoq izi va Face ID'ni telefonning o'zi tekshiradi; ilova
+  hech qanday biometrik ma'lumot olmaydi.
 
 Hech bir tizim 100% xavfsiz emas; xavfsizlik muammosini aniqlasangiz, mobilchi4862@gmail.com ga yozing.
 
@@ -143,15 +175,19 @@ Hech bir tizim 100% xavfsiz emas; xavfsizlik muammosini aniqlasangiz, mobilchi48
 - Qurilma identifikatorlari (1.1b) hisobingiz bilan birga turadi va hisob o'chirilganda o'chadi.
 - Xatolik hisobotlari Firebase Crashlytics standart muddati davomida (hozirda 90 kun) saqlanadi va
   keyin avtomatik o'chiriladi.
+- Foydalanish statistikasining foydalanuvchi va qurilma darajasidagi ma'lumotlari Google Analytics'da
+  2 oy saqlanadi va keyin avtomatik o'chiriladi (hech kimga bog'lanmagan umumlashtirilgan hisobotlar
+  qolishi mumkin). Hisob o'chirilganda ular darhol o'chmaydi, lekin shu muddatda o'chadi; oldinroq
+  o'chirishni mobilchi4862@gmail.com orqali so'rashingiz mumkin.
 - Qurilmadagi ma'lumotlar Ilovani o'chirganingizda o'chadi.
 
 ### 6. Sizning huquqlaringiz
 
-- **Ko'rish va nusxa olish:** barcha yozuvlaringizni Ilovada ko'rishingiz va Profil →
-  "Ma'lumotlarni eksport qilish (CSV)" orqali fayl sifatida olishingiz mumkin.
+- **Ko'rish va nusxa olish:** barcha yozuvlaringizni Ilovada ko'rishingiz mumkin; ularning fayl
+  (CSV) nusxasini olish uchun mobilchi4862@gmail.com ga yozing.
 - **Tuzatish:** har qanday yozuv, jamg'arma, kategoriya yoki sozlamani Ilovada tahrirlashingiz mumkin.
 - **O'chirish:** alohida yozuvlarni yoki butun hisobni Ilovaning o'zida o'chirishingiz mumkin.
-- **Rozilikni qaytarib olish:** xatolik hisobotlari, eslatmalar, kamera va galereya ruxsatlarini istalgan
+- **Rozilikni qaytarib olish:** eslatmalar, kamera va galereya ruxsatlarini istalgan
   vaqtda Ilova yoki telefon sozlamalarida o'chirishingiz mumkin.
 - Boshqa savollar yoki so'rovlar uchun mobilchi4862@gmail.com ga yozing.
 
@@ -176,7 +212,7 @@ Abdusamad Abdukarimov — mobilchi4862@gmail.com — Telegram: <https://t.me/bar
 
 ## English
 
-**Effective date:** September 19, 2026
+**Effective date:** September 27, 2026
 
 **Controller:** Abdusamad Abdukarimov, contact: mobilchi4862@gmail.com
 
@@ -185,8 +221,8 @@ App collects, why, where it is stored and what control you have over it.
 
 ### 1. Data we collect
 
-**1.1. Account data.** You must sign in to use the App: with a Google or Apple account, or with an email
-address and a password. With Google/Apple the provider gives us your name, email address, a profile
+**1.1. Account data.** You can sign in — with a Google or Apple account, or with an email address and a
+password — or use the App without an account, in guest mode (1.1d). With Google/Apple the provider gives us your name, email address, a profile
 photo URL (Google) and a unique user identifier issued by Firebase (uid). With Sign in with Apple you may
 hide your email; we then only receive Apple's relay address. We never see your Google/Apple password.
 If you sign up with email and password, we receive your email address, the full name you type in and,
@@ -213,6 +249,15 @@ it possible to deliver a message to this particular phone; it is not an advertis
 never used for tracking and it is never shared. The text of a message comes from us and never contains
 your financial records. You can switch notifications off in your device settings at any time, and
 declining the permission leaves the rest of the App unchanged.
+
+**1.1d. Guest mode (no account).** If you choose "continue without an account", your entries, savings
+pots, debts, categories, settings and receipt photos are stored **only on your phone** (in the App's
+private storage) and are not sent to our servers. For the App's settings, the advice posts and (if you
+choose to) a support payment, Firebase gives you an **anonymous identifier** — it carries no name,
+email or phone number, and your financial records are not linked to it. Guest-mode data is lost if you
+delete the App or change phones. If you later create an account or sign in, it is moved into your
+account; once the move has been fully verified, the copy on the phone is removed, and a backup copy
+stays on the device for 7 days and is then deleted.
 
 **1.2. Financial records you enter.** Only what you type in yourself:
 
@@ -242,7 +287,7 @@ Uzbekistan (`cbu.uz`). No personal data is sent with that request (as with any i
 bank's server can see your IP address).
 
 **1.5. Data kept on your device.** The following stays on your phone and is not sent to us: cached
-exchange rates and when they were fetched, your crash-report preference, scheduled local reminders
+exchange rates and when they were fetched, scheduled local reminders
 (notifications are generated on the device, not by a server) and Firebase's offline cache (so the App
 works without a connection).
 
@@ -250,19 +295,36 @@ works without a connection).
 may send: device model, operating system version, App version, the technical error description (stack
 trace), the time of the error and your Firebase uid (a pseudonymous identifier). Reports **do not
 include** amounts, comments, category names, your name or email. Reports are only sent from release
-builds, and you can turn them off at any time in **Profile → "Xatolik hisobotlarini yuborish"** (send
-error reports).
+builds; they are needed to keep the App stable, so there is no separate switch for them in the App. To
+ask for a particular report to be deleted, write to the address below.
+
+**1.7. Usage statistics (Google Analytics for Firebase).** To improve the App — to understand which
+features are needed and where people get stuck — the App sends Google Analytics for Firebase: which
+screens are opened and which buttons are tapped; which features are used (for example an entry, a
+savings pot or a debt was added, a report was opened) — only with its type, the built-in category key
+(a category you created is sent as just "custom"), the currency code and yes/no flags; the sign-in
+method and the type of a sign-in error; the settings you chose (language, theme, default currency,
+month start day, whether reminders and the app lock are on, guest or account mode); plus what Firebase
+collects automatically — an identifier of this App installation (app instance ID), device model, OS
+and App version, language, approximate country and session times. If you have an account, this is
+linked to your Firebase uid (a pseudonymous identifier); in guest mode no uid is sent. Usage statistics
+**never include** amounts, comments, your name, email or phone number, the names of savings pots,
+debts or categories, or any other text you type. No advertising identifier (IDFA / Android Advertising
+ID) is collected, ad personalisation signals are switched off, and the data is never used for
+advertising or tracking. Statistics are only sent from release builds; there is no separate switch for
+them in the App.
 
 ### 2. How we use data
 
 - to identify your account and show your data only to you;
 - to store your records, sync them across your devices and compute reports, budgets and savings figures;
 - to show the reminders you enable;
-- to improve stability (crash reports only).
+- to improve stability (crash reports, 1.6);
+- to understand, in aggregate, how the App is used and improve it (usage statistics, 1.7).
 
-We **do not sell** your data, do not show ads, do not share data with advertising or tracking services,
-and do not use usage-analytics services — the App does not track which screens you open or what you
-tap. No automated decisions are made about you.
+We **do not sell** your data, do not show ads and do not share data with advertising or tracking
+services. Usage statistics (1.7) are used only to improve the App and contain none of your financial
+records or text you type. No automated decisions are made about you.
 
 ### 3. Where data is stored and who processes it
 
@@ -274,7 +336,8 @@ Data is stored and processed by Firebase services provided by Google LLC:
 | Cloud Firestore | entries, savings pots, debts, settings, categories, monthly totals, profile and device records (1.1a–1.1c) |
 | Cloud Storage for Firebase | receipt photos and the profile picture |
 | Firebase Cloud Messaging | push notifications (1.1c) |
-| Firebase Crashlytics | crash reports |
+| Firebase Crashlytics | crash reports (1.6) |
+| Google Analytics for Firebase | usage statistics (1.7) |
 
 Firestore and Storage data are stored in the location selected for the Firebase project: **Qatar, Doha (Google Cloud `me-central1`)**.
 Google processes the data under its own security and privacy terms
@@ -289,6 +352,10 @@ We do not share your data with anyone else, except where required by law.
 - Firestore and Storage security rules only allow **the owner** (the signed-in account) to read or write
   each document and file; other users cannot access your data.
 - Receipt photos can only be stored in your own folder, only as JPEG and under 1 MB.
+- The optional app lock (Profile → Security) never stores the PIN itself, only a salted hash of it,
+  and only in your phone's protected storage (iOS Keychain / Android Keystore); it is never sent to
+  our servers. Fingerprint and Face ID are checked by the phone itself; the App receives no biometric
+  data.
 
 No system is perfectly secure; if you find a security issue, please write to mobilchi4862@gmail.com.
 
@@ -304,15 +371,19 @@ No system is perfectly secure; if you find a security issue, please write to mob
 - Device identifiers (1.1b) live with your account and are deleted when the account is deleted.
 - Crash reports are kept for Firebase Crashlytics' standard retention period (currently 90 days) and then
   deleted automatically.
+- User- and device-level usage statistics are kept in Google Analytics for 2 months and then deleted
+  automatically (aggregated reports that identify no one may remain). They are not removed the moment
+  an account is deleted, but expire within that period; you can ask for earlier deletion at
+  mobilchi4862@gmail.com.
 - Data on your device is removed when you uninstall the App.
 
 ### 6. Your rights
 
-- **Access and portability:** view all your records in the App and export them as a file via Profile →
-  "Ma'lumotlarni eksport qilish (CSV)" (export data).
+- **Access and portability:** view all your records in the App; to receive a copy as a file (CSV),
+  write to mobilchi4862@gmail.com.
 - **Correction:** edit any entry, savings pot, category or setting in the App.
 - **Deletion:** delete individual entries or your whole account in the App.
-- **Withdrawing consent:** turn off crash reports, reminders, camera and photo access at any time in the
+- **Withdrawing consent:** turn off reminders, camera and photo access at any time in the
   App or in your phone settings.
 - For any other request, write to mobilchi4862@gmail.com.
 
